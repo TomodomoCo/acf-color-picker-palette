@@ -6,7 +6,7 @@
  * Version: 1.0.0
  * Author: Tomodomo
  * Author URI: https://tomodomo.co/
- * License: GPLv2 or later
+ * License: MIT
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  */
 
