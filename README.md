@@ -6,3 +6,15 @@ This plugin adds an Advanced Custom Fields color picker field with a predefined 
 
 ## Requirements
 ACF 5+
+
+## Usage
+
+1. Clone or download the repo and activate the plugin in WP Admin.
+1. Add the Color Picker Palette field to an ACF field group and define the desired color palette.
+
+## License & Conduct
+This project is licensed under the terms of the MIT License, included in LICENSE.md.
+
+All open source Tomodomo projects follow a strict code of conduct, included in CODEOFCONDUCT.md. We ask that all contributors adhere to the standards and guidelines in that document.
+
+Thank you!
