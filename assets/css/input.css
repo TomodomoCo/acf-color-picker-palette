@@ -1,0 +1,9 @@
+.acf-field-color-picker-palette .acf-input {
+	display: flex;
+}
+
+.acf-field-color-picker-palette .acf-input .palette-color-picker-button {
+	height: auto;
+	margin-right: 4px;
+}
+
