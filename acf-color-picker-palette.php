@@ -3,7 +3,7 @@
  * Plugin Name: Advanced Custom Fields: Color Picker Palette
  * Plugin URI: https://github.com/TomodomoCo/acf-color-picker-palette
  * Description: Adds an ACF color picker field with a predefined color palette.
- * Version: 1.0.0
+ * Version: 1.1.0
  * Author: Tomodomo
  * Author URI: https://tomodomo.co/
  * License: MIT

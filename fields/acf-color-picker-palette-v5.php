@@ -112,8 +112,17 @@ if ( ! class_exists( 'ACF_Field_Color_Picker_Palette' ) ) :
 			acf_render_field_setting( $field, array(
 				'label'        => __( 'Color Options', 'acf-color-picker-palette' ),
 				'instructions' => __( 'Enter each choice on a new line.', 'acf-color-picker-palette' ) . '<br /><br />' . __( 'For more control, you may specify both a value and label like this:', 'acf-color-picker-palette' ) . '<br /><br />' . __( 'black : #000', 'acf-color-picker-palette' ),
-				'type'  => 'textarea',
-				'name'  => 'choices',
+				'type'         => 'textarea',
+				'name'         => 'choices',
+			) );
+
+			acf_render_field_setting( $field, array(
+				'label'         => __( 'Allow Custom', 'acf-color-picker-palette' ),
+				'name'          => 'allow_custom',
+				'default_value' => 1,
+				'type'          => 'true_false',
+				'ui'            => 1,
+				'message'       => __( 'Allow \'custom\' colors to be added', 'acf-color-picker-palette' ),
 			) );
 
 		}
@@ -207,6 +216,35 @@ if ( ! class_exists( 'ACF_Field_Color_Picker_Palette' ) ) :
 
 			return $field;
 
+		}
+
+		/**
+		 * Validate the color picker value.
+		 *
+		 * @since 1.1.0
+		 *
+		 * @param bool   $valid Whether the value is valid or not.
+		 * @param string $value Color value.
+		 * @param array  $field ACF Color Picker Palette field.
+		 * @param string $input ACF field ID.
+		 * @return bool
+		 */
+		public function validate_value( $valid, $value, $field, $input ) {
+			$allow_custom = isset( $field['allow_custom'] ) ? $field['allow_custom'] : true;
+
+			// Bail early if empty or custom values are allowed.
+			if ( empty( $value ) || $allow_custom ) {
+				return $valid;
+			}
+
+			// Ensure the value is in the list of choices.
+			$valid = in_array( $value, array_keys( $field['choices'] ), true );
+
+			if ( ! $valid ) {
+				$valid = __( 'Please choose from the available colors', 'acf-color-picker-palette' );
+			}
+
+			return $valid;
 		}
 
 	}

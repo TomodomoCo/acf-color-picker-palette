@@ -7,3 +7,8 @@
 	margin-right: 4px;
 }
 
+.acf-field-color-picker-palette .acf-input .acf-error-message {
+	position: absolute;
+	bottom: 28px;
+}
+
